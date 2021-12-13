@@ -36,12 +36,12 @@ void	rb(t_list **stack_b)
 	write(1, "rb\n", 3);
 }
 
-void rr (t_list **stack_a, t_list **stack_b)
+void rr (t_list *stack_a, t_list *stack_b)
 {
-	if (((*stack_a)->next) && ((*stack_b)->next))
+	if ((stack_a->next) && (stack_b->next))
 	{
-		ra(stack_a);
-		rb(stack_b);
+		ra(&stack_a);
+		rb(&stack_b);
+		write(1, "rr\n", 3);
 	}
-	write(1, "rr\n", 3);
 }

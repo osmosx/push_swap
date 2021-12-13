@@ -17,10 +17,10 @@ t_list *create_node(int argc, char **argv);
 void check_repeat (t_list *node);
 int check_sort (t_list *node);
 t_list	*ft_lstlast(t_list *node);
-void	sa(t_list *stack_a);
-void	sb(t_list *stack_b);
+void	sa(t_list **stack_a);
+void	sb(t_list **stack_b);
 void	ss(t_list *stack_a, t_list *stack_b);
 void	ra(t_list **stack_a);
 void	rb(t_list **stack_b);
-void 	rr(t_list **stack_a, t_list **stack_b);
+void 	rr(t_list *stack_a, t_list *stack_b);
 #endif
