@@ -13,6 +13,8 @@ void sa (t_list **stack_a)
 		free(tmp);
 		write(1, "sa\n", 3);
 	}
+	else
+		return ;
 }
 
 void sb (t_list **stack_b)
@@ -28,6 +30,8 @@ void sb (t_list **stack_b)
 		free(tmp);
 		write(1, "sb\n", 3);
 	}
+	else
+		return ;
 }
 
 void	ss(t_list *stack_a, t_list *stack_b)
@@ -38,4 +42,6 @@ void	ss(t_list *stack_a, t_list *stack_b)
 		sb(&stack_b);
 		write(1, "ss\n", 3);
 	}
+	else
+		return ;
 }

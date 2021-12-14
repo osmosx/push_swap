@@ -14,8 +14,10 @@ void	ra(t_list **stack_a)
 		(*stack_a)->next = last;
 		last->next = NULL;
 		*stack_a = first;
+		write(1, "ra\n", 3);
 	}
-	write(1, "ra\n", 3);
+	else
+		return ;
 }
 
 void	rb(t_list **stack_b)
@@ -32,8 +34,10 @@ void	rb(t_list **stack_b)
 		(*stack_b)->next = last;
 		last->next = NULL;
 		*stack_b = first;
+		write(1, "rb\n", 3);
 	}
-	write(1, "rb\n", 3);
+	else
+		return ;
 }
 
 void rr (t_list *stack_a, t_list *stack_b)
@@ -44,4 +48,6 @@ void rr (t_list *stack_a, t_list *stack_b)
 		rb(&stack_b);
 		write(1, "rr\n", 3);
 	}
+	else
+		return ;
 }
