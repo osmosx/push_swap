@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   swap.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: nenvoy <nenvoy@student.21-school.ru>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/12/15 16:52:22 by nenvoy            #+#    #+#             */
+/*   Updated: 2021/12/15 16:52:57 by nenvoy           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
-void sa (t_list **stack_a)
+void	sa(t_list **stack_a)
 {
-	t_list *tmp;
+	t_list	*tmp;
 
 	if ((*stack_a)->next)
 	{
@@ -17,9 +29,9 @@ void sa (t_list **stack_a)
 		return ;
 }
 
-void sb (t_list **stack_b)
+void	sb(t_list **stack_b)
 {
-	t_list *tmp;
+	t_list	*tmp;
 
 	if ((*stack_b)->next)
 	{

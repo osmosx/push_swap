@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   rotate.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: nenvoy <nenvoy@student.21-school.ru>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/12/15 16:51:17 by nenvoy            #+#    #+#             */
+/*   Updated: 2021/12/15 16:52:15 by nenvoy           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void	ra(t_list **stack_a)
 {
-	t_list *last;
-	t_list *first;
+	t_list	*last;
+	t_list	*first;
 
 	if ((*stack_a)->next)
 	{
@@ -22,8 +34,8 @@ void	ra(t_list **stack_a)
 
 void	rb(t_list **stack_b)
 {
-	t_list *last;
-	t_list *first;
+	t_list	*last;
+	t_list	*first;
 
 	if ((*stack_b)->next)
 	{
@@ -40,7 +52,7 @@ void	rb(t_list **stack_b)
 		return ;
 }
 
-void rr (t_list *stack_a, t_list *stack_b)
+void	rr(t_list *stack_a, t_list *stack_b)
 {
 	if ((stack_a->next) && (stack_b->next))
 	{

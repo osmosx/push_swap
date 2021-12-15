@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   create_node.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: nenvoy <nenvoy@student.21-school.ru>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/12/15 16:44:58 by nenvoy            #+#    #+#             */
+/*   Updated: 2021/12/15 16:45:17 by nenvoy           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
-t_list *create_node(int argc, char **argv)
+t_list	*create_node(int argc, char **argv)
 {
 	t_list	*node;
 	t_list	*tmp;
@@ -28,4 +40,3 @@ t_list *create_node(int argc, char **argv)
 	}
 	return (tmp);
 }
-

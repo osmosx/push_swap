@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   reverse.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: nenvoy <nenvoy@student.21-school.ru>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/12/15 16:50:45 by nenvoy            #+#    #+#             */
+/*   Updated: 2021/12/15 16:51:09 by nenvoy           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
-void rra (t_list **stack_a)
+void	rra(t_list **stack_a)
 {
 	t_list	*tmp;
 	t_list	*first;
@@ -22,7 +34,7 @@ void rra (t_list **stack_a)
 		return ;
 }
 
-void rrb (t_list **stack_b)
+void	rrb(t_list **stack_b)
 {
 	t_list	*tmp;
 	t_list	*first;
@@ -44,7 +56,7 @@ void rrb (t_list **stack_b)
 		return ;
 }
 
-void rrr (t_list *stack_a, t_list *stack_b)
+void	rrr(t_list *stack_a, t_list *stack_b)
 {
 	if ((stack_a->next) && (stack_b->next))
 	{
@@ -55,4 +67,3 @@ void rrr (t_list *stack_a, t_list *stack_b)
 	else
 		return ;
 }
-
