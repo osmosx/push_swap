@@ -10,11 +10,19 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "push_swap.h"
+
+static void	error(void)
+{
+	write (2, "Error: entered value is not int!\n", 34);
+	exit(1);
+}
+
 int	ft_atoi(const char *str)
 {
-	int	i;
-	int	negativ;
-	int	number;
+	int			i;
+	int			negativ;
+	long int	number;
 
 	negativ = 1;
 	number = 0;
@@ -25,14 +33,15 @@ int	ft_atoi(const char *str)
 	if (str[i] == '-' || str[i] == '+')
 	{
 		if (str [i] == '-')
-			negativ = -negativ;
+			negativ = -1;
 		i++;
 	}
 	while (str[i] >= '0' && str[i] <= '9')
 	{
-		number = number * 10;
-		number = number + (str[i] - '0');
+		number = number * 10 + (str[i] - '0');
 		i++;
 	}
+	if (((number * negativ) < -2147483648) || ((number * negativ) > 2147483647))
+		error();
 	return (number * negativ);
 }

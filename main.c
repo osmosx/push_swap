@@ -19,6 +19,7 @@ int	main(int argc, char **argv)
 
 	if (argc < 2)
 		write(2, "Error: Specify data for sorting\n", 33);
+
 	else
 	{
 		stack_a = create_node(argc, argv);
