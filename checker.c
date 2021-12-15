@@ -44,9 +44,9 @@ int	check_sort(t_list *node)
 
 int	check(t_list *node)
 {
-		if (check_sort(node))
-			write(2, "Data sorted!\n", 13);
-		if (check_repeat(node))
-			write(2, "Error: repeated values!\n", 25);
+	if (check_sort(node))
+		write(2, "Data sorted!\n", 13);
+	if (check_repeat(node))
+		write(2, "Error: repeated values!\n", 25);
 	return (0);
 }

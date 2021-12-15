@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-void mini_sort (int argc, t_list **stack_a)
+void	mini_sort(int argc, t_list **stack_a)
 {
 	if (argc == 3 && ((*stack_a)->data > (*stack_a)->next->data))
 		sa(stack_a);

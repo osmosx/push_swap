@@ -24,9 +24,9 @@ typedef struct s_list
 	struct s_list	*next;
 }	t_list;
 
-int	ft_atoi(const char *str);
+int		ft_atoi(const char *str);
 t_list	*create_node(int argc, char **argv);
-int	check_repeat(t_list *node);
+int		check_repeat(t_list *node);
 int		check_sort(t_list *node);
 void	sa(t_list **stack_a);
 void	sb(t_list **stack_b);

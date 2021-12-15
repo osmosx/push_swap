@@ -18,6 +18,20 @@ static void	error(void)
 	exit(1);
 }
 
+static void	check_number(const char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i] != '\0')
+	{
+		if (str[i] >= '0' && str[i] <= '9')
+			return ;
+		i++;
+	}
+	error();
+}
+
 int	ft_atoi(const char *str)
 {
 	int			i;
@@ -27,6 +41,7 @@ int	ft_atoi(const char *str)
 	negativ = 1;
 	number = 0;
 	i = 0;
+	check_number(str);
 	while ((str[i] == ' ') || (str[i] == '\t') || (str[i] == '\n') || (str[i]
 			== '\v') || (str[i] == '\f') || (str[i] == '\r'))
 		i++;
