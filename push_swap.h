@@ -26,7 +26,7 @@ typedef struct s_list
 
 int		ft_atoi(const char *str);
 t_list	*create_node(int argc, char **argv);
-void	check_repeat(t_list *node);
+int	check_repeat(t_list *node);
 int		check_sort(t_list *node);
 void	sa(t_list **stack_a);
 void	sb(t_list **stack_b);
@@ -40,4 +40,5 @@ void	rrr(t_list *stack_a, t_list *stack_b);
 void	pb(t_list **stack_a, t_list **stack_b);
 void	pa(t_list **stack_a, t_list **stack_b);
 int		check(t_list *node);
+void	mini_sort(int argc, t_list **stack_a);
 #endif

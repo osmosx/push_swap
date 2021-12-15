@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-void	check_repeat(t_list *node)
+int	check_repeat(t_list *node)
 {
 	t_list	*search;
 
@@ -23,14 +23,12 @@ void	check_repeat(t_list *node)
 		{
 			if ((node->data == search->data)
 				&& (node->id != search->id))
-			{
-				write (1, "Error: repeated values!\n", 25);
-				exit(0);
-			}
+				return (-1);
 			search = search->next;
 		}
 		node = node->next;
 	}
+	return (0);
 }
 
 int	check_sort(t_list *node)
@@ -38,16 +36,17 @@ int	check_sort(t_list *node)
 	while (node->next != NULL)
 	{
 		if (node->data > node->next->data)
-			return (-1);
+			return (0);
 		node = node->next;
 	}
-	return (0);
+	return (-1);
 }
 
 int	check(t_list *node)
 {
-	if (!check_sort(node))
-		write(1, "Data sorted\n", 13);
-	check_repeat(node);
+		if (check_sort(node))
+			write(2, "Data sorted!\n", 13);
+		if (check_repeat(node))
+			write(2, "Error: repeated values!\n", 25);
 	return (0);
 }
