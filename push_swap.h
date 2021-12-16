@@ -40,5 +40,7 @@ void	rrr(t_list *stack_a, t_list *stack_b);
 void	pb(t_list **stack_a, t_list **stack_b);
 void	pa(t_list **stack_a, t_list **stack_b);
 int		check(t_list *node);
+void	sort_two(t_list **stack_a);
+void	sort_three(t_list **stack_a);
 void	mini_sort(int argc, t_list **stack_a);
 #endif
