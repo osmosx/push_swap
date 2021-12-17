@@ -17,14 +17,14 @@ int	main(int argc, char **argv)
 	t_list	*stack_a;
 	t_list	*stack_b;
 
-	if (argc < 2)
-		write(2, "Error: Specify data for sorting\n", 33);
-	else
+	if (argc == 2)
+		write(2, "Error: Nothing to sort!\n", 25);
+	if (argc > 2)
 	{
 		stack_a = create_node(argc, argv);
-		stack_b = NULL;
 		check(stack_a);
-		mini_sort(argc, &stack_a);
+		stack_b = NULL;
+		mini_sort(argc, &stack_a, &stack_b);
 		while (stack_a)
 		{
 			printf("%d", stack_a->data);

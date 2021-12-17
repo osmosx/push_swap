@@ -45,10 +45,43 @@ void	sort_three(t_list **stack_a)
 		rra(stack_a);
 }
 
-void	mini_sort(int argc, t_list **stack_a)
+//void	sort_five(t_list **stack_a, t_list **stack_b)
+//{
+//	int	min;
+//	int	max;
+//	t_list *tmp;
+//
+//	tmp = (*stack_a);
+//	min = min_data((*stack_a));
+//	max = max_data((*stack_a));
+//
+//	while ((*stack_a))
+//	{
+//		if((*stack_a)->data == max || (*stack_a)->data == min)
+//			pb(stack_a, stack_b);
+//		else
+//			(*stack_a) = (*stack_a)->next;
+//	}
+//	(*stack_a) = tmp;
+//
+//	while (tmp)
+//	{
+//		if(tmp->data == max || tmp->data == min)
+//			pb(&tmp, stack_b);
+//		else
+//			tmp = tmp->next;
+//	}
+//	sort_three(&tmp);
+//	pa(&tmp, stack_b);
+//	pa(&tmp, stack_b);
+//}
+
+void	mini_sort(int argc, t_list **stack_a, t_list **stack_b)
 {
 	if (argc == 3)
 		sort_two(&(*stack_a));
 	if (argc == 4)
 		sort_three(&(*stack_a));
+	if (argc == 6)
+		sort_five(&(*stack_a), &(*stack_b));
 }
