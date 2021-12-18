@@ -31,5 +31,7 @@ int	main(int argc, char **argv)
 			stack_a = stack_a->next;
 		}
 	}
+	free(stack_a);
+	free(stack_b);
 	return (0);
 }

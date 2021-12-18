@@ -17,6 +17,8 @@ int min_data (t_list *node)
 	t_list *tmp;
 	int min;
 
+	if (!node)
+		return(0);
 	tmp = node;
 	min = node->data;
 	while (tmp->next)
@@ -33,6 +35,8 @@ int max_data (t_list *node)
 	t_list *tmp;
 	int max;
 
+	if (!node)
+		return(0);
 	tmp = node;
 	max = node->data;
 	while (tmp->next)
@@ -44,11 +48,13 @@ int max_data (t_list *node)
 	return (max);
 }
 
-int len_node (t_list *node)
+int	len_node(t_list *node)
 {
 	t_list *tmp;
 	int len;
 
+	if (!node)
+		return(0);
 	len = 0;
 	tmp = node;
 	while (tmp)
@@ -57,4 +63,18 @@ int len_node (t_list *node)
 		len++;
 	}
 	return (len);
+}
+
+void	free_node(t_list *node)
+{
+	t_list	*tmp;
+
+	while (node)
+	{
+		tmp = node;
+		node = node->next;
+		if (tmp)
+			free(tmp);
+	}
+	node = NULL;
 }

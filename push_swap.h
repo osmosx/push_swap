@@ -46,4 +46,5 @@ void	mini_sort(int argc, t_list **stack_a, t_list **stck_b);
 int		min_data(t_list *node);
 int		max_data(t_list *node);
 int		len_node(t_list *node);
+void	free_node(t_list *node);
 #endif
