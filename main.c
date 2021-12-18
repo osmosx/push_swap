@@ -30,8 +30,8 @@ int	main(int argc, char **argv)
 			printf("%d", stack_a->data);
 			stack_a = stack_a->next;
 		}
+		free(stack_a);
+		free(stack_b);
 	}
-	free(stack_a);
-	free(stack_b);
 	return (0);
 }
