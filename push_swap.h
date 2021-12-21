@@ -42,9 +42,14 @@ void	pa(t_list **stack_a, t_list **stack_b);
 int		check(t_list *node);
 void	sort_two(t_list **stack_a);
 void	sort_three(t_list **stack_a);
-void	mini_sort(int argc, t_list **stack_a, t_list **stck_b);
+void	sort_four_six(t_list **stack_a, t_list **stack_b);
+void	sort_big(t_list **stack_a, t_list **stack_b);
+void	sort(int argc, t_list **stack_a, t_list **stck_b);
 int		min_data(t_list *node);
 int		max_data(t_list *node);
+int		mid_data(int max);
 int		len_node(t_list *node);
 void	free_node(t_list *node);
+
+
 #endif

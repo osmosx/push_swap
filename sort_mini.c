@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort.c                                             :+:      :+:    :+:   */
+/*   sort_mini.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nenvoy <nenvoy@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -49,22 +49,24 @@ void	sort_four_six(t_list **stack_a, t_list **stack_b)
 {
 	while (len_node(*stack_a) != 3)
 	{
-		while ((*stack_a)->data != (min_data(*stack_a)))
+		while ((*stack_a)->data != min_data(*stack_a))
 			ra(stack_a);
 		pb(stack_a, stack_b);
-		if (!(check_sort(*stack_a)))
+		if (!(check_sort(*stack_a)) && (len_node(*stack_a) == 3))
 			sort_three(stack_a);
 	}
 	while (*stack_b)
 		pa(stack_a, stack_b);
 }
 
-void	mini_sort(int argc, t_list **stack_a, t_list **stack_b)
+void	sort(int argc, t_list **stack_a, t_list **stack_b)
 {
 	if (argc == 3)
-		sort_two(&(*stack_a));
+		sort_two(stack_a);
 	if (argc == 4)
-		sort_three(&(*stack_a));
+		sort_three(stack_a);
 	if (argc >= 5 && argc <= 7)
-		sort_four_six(&(*stack_a), &(*stack_b));
+		sort_four_six(stack_a, stack_b);
+	if (argc > 7)
+		sort_big(stack_a, stack_b);
 }

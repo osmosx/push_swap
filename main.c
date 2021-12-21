@@ -24,14 +24,19 @@ int	main(int argc, char **argv)
 		stack_a = create_node(argc, argv);
 		check(stack_a);
 		stack_b = NULL;
-		mini_sort(argc, &stack_a, &stack_b);
+		sort(argc, &stack_a, &stack_b);
 		while (stack_a)
 		{
-			printf("%d", stack_a->data);
+			printf("stack_a=%d\n", stack_a->data);
 			stack_a = stack_a->next;
 		}
-		free(stack_a);
-		free(stack_b);
+		while (stack_b)
+		{
+			printf("stack_b=%d\n", stack_b->data);
+			stack_b = stack_b->next;
+		}
+//		free_node(stack_a);
+//		free_node(stack_b);
 	}
 	return (0);
 }
