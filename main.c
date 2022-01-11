@@ -23,6 +23,7 @@ int	main(int argc, char **argv)
 	{
 		stack_a = create_node(argc, argv);
 		check(stack_a);
+		sort_id(&stack_a, argc);
 		stack_b = NULL;
 		sort(argc, &stack_a, &stack_b);
 		while (stack_a)
@@ -35,8 +36,6 @@ int	main(int argc, char **argv)
 			printf("stack_b=%d\n", stack_b->data);
 			stack_b = stack_b->next;
 		}
-//		free_node(stack_a);
-//		free_node(stack_b);
 	}
 	return (0);
 }

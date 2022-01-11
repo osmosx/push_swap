@@ -12,36 +12,36 @@
 
 #include "push_swap.h"
 
-int min_data(t_list *node)
+int	min_data(t_list *node)
 {
-	t_list *tmp;
-	int min;
+	t_list	*tmp;
+	int		min;
 
 	if (!node)
-		return(0);
+		return (0);
 	tmp = node;
 	min = node->data;
 	while (tmp->next)
 	{
-		if(min > tmp->next->data)
+		if (min > tmp->next->data)
 			min = tmp->next->data;
 		tmp = tmp->next;
 	}
 	return (min);
 }
 
-int max_data(t_list *node)
+int	max_data(t_list *node)
 {
-	t_list *tmp;
-	int max;
+	t_list	*tmp;
+	int		max;
 
 	if (!node)
-		return(0);
+		return (0);
 	tmp = node;
 	max = node->data;
 	while (tmp->next)
 	{
-		if(max < tmp->next->data)
+		if (max < tmp->next->data)
 			max = tmp->next->data;
 		tmp = tmp->next;
 	}
@@ -50,11 +50,11 @@ int max_data(t_list *node)
 
 int	len_node(t_list *node)
 {
-	t_list *tmp;
-	int len;
+	t_list	*tmp;
+	int		len;
 
 	if (!node)
-		return(0);
+		return (0);
 	len = 0;
 	tmp = node;
 	while (tmp)
@@ -65,16 +65,43 @@ int	len_node(t_list *node)
 	return (len);
 }
 
-void	free_node(t_list *node)
+void	sort_id(t_list **stack, int argc)
 {
 	t_list	*tmp;
+	t_list	*min_tmp;
+	int		i;
+	int		j;
 
-	while (node)
+	j = 0;
+	while (argc)
 	{
-		tmp = node;
-		node = node->next;
-		if (tmp)
-			free(tmp);
+		tmp = *stack;
+		i = 2147483647;
+		while (tmp)
+		{
+			if (tmp->data <= i && tmp->id == -1)
+			{
+				i = tmp->data;
+				min_tmp = tmp;
+			}
+			tmp = tmp->next;
+		}
+		min_tmp->id += j;
+		j++;
+		argc--;
 	}
-	node = NULL;
 }
+
+//void	free_node(t_list *node)
+//{
+//	t_list	*tmp;
+//
+//	while (node)
+//	{
+//		tmp = node;
+//		node = node->next;
+//		if (tmp)
+//			free(tmp);
+//	}
+//	node = NULL;
+//}

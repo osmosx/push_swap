@@ -18,16 +18,21 @@ void	sort_big(t_list **stack_a, t_list **stack_b)
 	int	mid;
 	int	min;
 
-	max = max_data(*stack_a);
-	min = min_data(*stack_a);
-	mid = min + max / 2;
-
+	min = 0;
+	max = len_node(*stack_a);
+	mid = len_node(*stack_a) / 2;
 	while (len_node(*stack_a) != 3)
 	{
-		if ((*stack_a)->data == max || (*stack_a)->data == min
-		|| (*stack_a)->data == mid)
+		if ((*stack_a)->id == max || (*stack_a)->id == min
+			|| (*stack_a)->id == mid)
 			ra(stack_a);
-		pb(stack_a,stack_b);
+		else if ((*stack_a)->id < mid)
+			pb(stack_a, stack_b);
+		else if ((*stack_a)->id > mid)
+		{
+			pb(stack_a, stack_b);
+			rb(stack_b);
+		}
 		if (!(check_sort(*stack_a)) && (len_node(*stack_a) == 3))
 			sort_three(stack_a);
 	}

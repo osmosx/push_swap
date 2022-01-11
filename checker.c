@@ -22,7 +22,7 @@ int	check_repeat(t_list *node)
 		while (search)
 		{
 			if ((node->data == search->data)
-				&& (node->id != search->id))
+				&& (node->index != search->index))
 				return (-1);
 			search = search->next;
 		}
@@ -45,8 +45,14 @@ int	check_sort(t_list *node)
 int	check(t_list *node)
 {
 	if (check_sort(node))
+	{
 		write(2, "Data sorted!\n", 13);
+		exit (0);
+	}
 	if (check_repeat(node))
+	{
 		write(2, "Error: repeated values!\n", 25);
+		exit (0);
+	}
 	return (0);
 }
