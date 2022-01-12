@@ -67,6 +67,8 @@ void	sort(int argc, t_list **stack_a, t_list **stack_b)
 		sort_three(stack_a);
 	if (argc >= 5 && argc <= 7)
 		sort_four_six(stack_a, stack_b);
-	if (argc > 7)
-		sort_big(stack_a, stack_b);
+	if (argc > 7 && argc <= 101)
+		sort_100(stack_a, stack_b);
+	if (argc > 101)
+		sort_500(stack_a, stack_b);
 }

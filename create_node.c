@@ -12,8 +12,11 @@
 
 #include "push_swap.h"
 
-static void	new_node(int i, t_list *node, int argc, char **argv)
+static void	new_node(t_list *node, int argc, char **argv)
 {
+	int	i;
+
+	i = 1;
 	while (argc > 2)
 	{
 		i++;
@@ -34,18 +37,16 @@ t_list	*create_node(int argc, char **argv)
 {
 	t_list	*node;
 	t_list	*tmp;
-	int		i;
 
-	i = 1;
 	node = malloc(sizeof(t_list));
 	if (!node)
 		return (0);
 	tmp = node;
-	node->data = ft_atoi(argv[i]);
+	node->data = ft_atoi(argv[1]);
 	node->id = -1;
-	node->index = i;
+	node->index = 1;
 	node->score = -1;
 	node->next = NULL;
-	new_node(i, &(*node), argc, argv);
+	new_node(&(*node), argc, argv);
 	return (tmp);
 }

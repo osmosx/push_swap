@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   maybe.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nenvoy <nenvoy@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,73 +12,52 @@
 
 #include "push_swap.h"
 
-int	len_node(t_list *node)
+int	min_data(t_list *node)
 {
 	t_list	*tmp;
-	int		len;
+	int		min;
 
 	if (!node)
 		return (0);
-	len = 0;
 	tmp = node;
-	while (tmp)
+	min = node->data;
+	while (tmp->next)
 	{
+		if (min > tmp->next->data)
+			min = tmp->next->data;
 		tmp = tmp->next;
-		len++;
 	}
-	return (len);
+	return (min);
 }
 
-void	sort_id(t_list **stack, int argc)
+int	max_data(t_list *node)
 {
 	t_list	*tmp;
-	t_list	*min_tmp;
-	int		i;
-	int		j;
+	int		max;
 
-	j = 0;
-	while (argc)
+	if (!node)
+		return (0);
+	tmp = node;
+	max = node->data;
+	while (tmp->next)
 	{
-		tmp = *stack;
-		i = 2147483647;
-		while (tmp)
-		{
-			if (tmp->data <= i && tmp->id == -1)
-			{
-				i = tmp->data;
-				min_tmp = tmp;
-			}
-			tmp = tmp->next;
-		}
-		min_tmp->id += j;
-		j++;
-		argc--;
+		if (max < tmp->next->data)
+			max = tmp->next->data;
+		tmp = tmp->next;
 	}
+	return (max);
 }
 
-void	score(t_list *stack)
+void	free_node(t_list *node)
 {
-	int	max;
-	int	mid;
-	int	i;
+	t_list	*tmp;
 
-	i = 0;
-	max = len_node(stack);
-	mid = len_node(stack) / 2;
-	while (i <= mid)
+	while (node)
 	{
-		stack->score = i;
-		stack = stack->next;
-		i++;
+		tmp = node;
+		node = node->next;
+		if (tmp)
+			free(tmp);
 	}
-	if (max % 2 != 0)
-		i--;
-	else
-		i -= 2;
-	while (i)
-	{
-		stack->score = i;
-		stack = stack->next;
-		i--;
-	}
+	node = NULL;
 }

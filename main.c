@@ -26,16 +26,17 @@ int	main(int argc, char **argv)
 		sort_id(&stack_a, argc);
 		stack_b = NULL;
 		sort(argc, &stack_a, &stack_b);
-		while (stack_a)
-		{
-			printf("stack_a=%d\n", stack_a->data);
-			stack_a = stack_a->next;
-		}
-		while (stack_b)
-		{
-			printf("stack_b=%d\n", stack_b->data);
-			stack_b = stack_b->next;
-		}
+//		while (stack_a)
+//		{
+//			printf("stack_a=%d\n", stack_a->data);
+//			stack_a = stack_a->next;
+//		}
+//		while (stack_b)
+//		{
+//			printf("stack_b=%d\n", stack_b->data);
+//			printf("ID=%d\n", stack_b->id);
+//			stack_b = stack_b->next;
+//		}
 	}
 	return (0);
 }
