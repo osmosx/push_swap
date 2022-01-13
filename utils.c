@@ -56,29 +56,20 @@ void	sort_id(t_list **stack, int argc)
 	}
 }
 
-void	score(t_list *stack)
+int	min_data(t_list *node)
 {
-	int	max;
-	int	mid;
-	int	i;
+	t_list	*tmp;
+	int		min;
 
-	i = 0;
-	max = len_node(stack);
-	mid = len_node(stack) / 2;
-	while (i <= mid)
+	if (!node)
+		return (0);
+	tmp = node;
+	min = node->data;
+	while (tmp->next)
 	{
-		stack->score = i;
-		stack = stack->next;
-		i++;
+		if (min > tmp->next->data)
+			min = tmp->next->data;
+		tmp = tmp->next;
 	}
-	if (max % 2 != 0)
-		i--;
-	else
-		i -= 2;
-	while (i)
-	{
-		stack->score = i;
-		stack = stack->next;
-		i--;
-	}
+	return (min);
 }

@@ -24,6 +24,8 @@ void	pb(t_list **stack_a, t_list **stack_b)
 		*stack_b = tmp;
 		write(1, "pb\n", 3);
 	}
+	else
+		return ;
 }
 
 void	pa(t_list **stack_a, t_list **stack_b)
@@ -38,4 +40,6 @@ void	pa(t_list **stack_a, t_list **stack_b)
 		*stack_a = tmp;
 		write(1, "pa\n", 3);
 	}
+	else
+		return ;
 }

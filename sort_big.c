@@ -12,32 +12,6 @@
 
 #include "push_swap.h"
 
-//void	sort_big(t_list **stack_a, t_list **stack_b)
-//{
-//	int	max;
-//	int	mid;
-//	int	min;
-//
-//	min = 0;
-//	max = len_node(*stack_a);
-//	mid = len_node(*stack_a) / 2;
-//	while (len_node(*stack_a) != 3)
-//	{
-//		if ((*stack_a)->id == max || (*stack_a)->id == min
-//			|| (*stack_a)->id == mid)
-//			ra(stack_a);
-//		else if ((*stack_a)->id < mid)
-//			pb(stack_a, stack_b);
-//		else if ((*stack_a)->id > mid)
-//		{
-//			pb(stack_a, stack_b);
-//			rb(stack_b);
-//		}
-//		if (!(check_sort(*stack_a)) && (len_node(*stack_a) == 3))
-//			sort_three(stack_a);
-//	}
-//}
-
 static int	position(t_list **stack_b, int len)
 {
 	t_list	*tmp;
@@ -60,7 +34,6 @@ static void	sort_pa(t_list **stack_a, t_list **stack_b)
 	while ((*stack_b) != NULL)
 	{
 		len = len_node(*stack_b) - 1;
-		score(*stack_b);
 		if ((*stack_b)->id != len && (len / 2) > position(stack_b, len))
 			rb(stack_b);
 		else if ((*stack_b)->id != len && (len / 2) <= position(stack_b, len))
@@ -79,16 +52,16 @@ void	sort_100(t_list **stack_a, t_list **stack_b)
 	{
 		if (i > 1 && (*stack_a)->id <= i)
 		{
-			pb(stack_a, stack_b),
+			pb(stack_a, stack_b);
 			i++;
 			rb(stack_b);
 		}
 		else if ((*stack_a)->id <= i + 15)
 		{
-			pb(stack_a, stack_b),
+			pb(stack_a, stack_b);
 			i++;
 		}
-		else if ((*stack_a)->id >= i)
+		else
 			ra(stack_a);
 	}
 	sort_pa(stack_a, stack_b);
@@ -103,7 +76,7 @@ void	sort_500(t_list **stack_a, t_list **stack_b)
 	{
 		if (i > 1 && (*stack_a)->id <= i)
 		{
-			pb(stack_a, stack_b),
+			pb(stack_a, stack_b);
 			i++;
 			rb(stack_b);
 		}
@@ -112,7 +85,7 @@ void	sort_500(t_list **stack_a, t_list **stack_b)
 			pb(stack_a, stack_b),
 			i++;
 		}
-		else if ((*stack_a)->id >= i)
+		else
 			ra(stack_a);
 	}
 	sort_pa(stack_a, stack_b);

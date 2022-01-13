@@ -14,8 +14,8 @@
 
 static void	error(void)
 {
-	write (2, "Error: entered value is not int!\n", 34);
-	exit(1);
+	write (2, "Error\n", 6);
+	exit(0);
 }
 
 static void	check_number(const char *str)
@@ -25,11 +25,12 @@ static void	check_number(const char *str)
 	i = 0;
 	while (str[i] != '\0')
 	{
-		if (str[i] >= '0' && str[i] <= '9')
-			return ;
+		if (str[i] == 45)
+			i++;
+		if (str[i] < '0' || str[i] > '9')
+			error();
 		i++;
 	}
-	error();
 }
 
 int	ft_atoi(const char *str)

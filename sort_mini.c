@@ -58,17 +58,3 @@ void	sort_four_six(t_list **stack_a, t_list **stack_b)
 	while (*stack_b)
 		pa(stack_a, stack_b);
 }
-
-void	sort(int argc, t_list **stack_a, t_list **stack_b)
-{
-	if (argc == 3)
-		sort_two(stack_a);
-	if (argc == 4)
-		sort_three(stack_a);
-	if (argc >= 5 && argc <= 7)
-		sort_four_six(stack_a, stack_b);
-	if (argc > 7 && argc <= 101)
-		sort_100(stack_a, stack_b);
-	if (argc > 101)
-		sort_500(stack_a, stack_b);
-}

@@ -26,7 +26,6 @@ static void	new_node(t_list *node, int argc, char **argv)
 		node = node->next;
 		node->data = ft_atoi(argv[i]);
 		node->id = -1;
-		node->score = -1;
 		node->index = i;
 		node->next = NULL;
 		argc--;
@@ -45,7 +44,6 @@ t_list	*create_node(int argc, char **argv)
 	node->data = ft_atoi(argv[1]);
 	node->id = -1;
 	node->index = 1;
-	node->score = -1;
 	node->next = NULL;
 	new_node(&(*node), argc, argv);
 	return (tmp);

@@ -21,7 +21,6 @@ typedef struct s_list
 {
 	int				data;
 	int				id;
-	int				score;
 	int				index;
 	struct s_list	*next;
 }	t_list;
@@ -49,11 +48,6 @@ void	sort_100(t_list **stack_a, t_list **stack_b);
 void	sort_500(t_list **stack_a, t_list **stack_b);
 void	sort(int argc, t_list **stack_a, t_list **stack_b);
 int		min_data(t_list *node);
-int		max_data(t_list *node);
 int		len_node(t_list *node);
 void	sort_id(t_list **stack, int argc);
-void	free_node(t_list *node);
-void	score(t_list *stack);
-
-
 #endif

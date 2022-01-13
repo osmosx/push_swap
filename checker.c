@@ -46,12 +46,12 @@ int	check(t_list *node)
 {
 	if (check_sort(node))
 	{
-		write(2, "Data sorted!\n", 13);
+		write(2, "Error\n", 6);
 		exit (0);
 	}
 	if (check_repeat(node))
 	{
-		write(2, "Error: repeated values!\n", 25);
+		write(2, "Error\n", 6);
 		exit (0);
 	}
 	return (0);
