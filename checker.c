@@ -45,10 +45,7 @@ int	check_sort(t_list *node)
 int	check(t_list *node)
 {
 	if (check_sort(node))
-	{
-		write(2, "Error\n", 6);
 		exit (0);
-	}
 	if (check_repeat(node))
 	{
 		write(2, "Error\n", 6);
