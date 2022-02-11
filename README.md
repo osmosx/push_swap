@@ -18,6 +18,8 @@ Only these moves are allowed:
 | rra           | rotates stuck A down by one |
 | rrb           | rotates stuck B down by one |
 | rrr           | rotates both A and B down by one |
+##
+![Image alt](https://github.com/osmosx/push_swap/blob/main/img/push_swap.gif)
 
 ## Usage
 Run ```make```.
