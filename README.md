@@ -18,17 +18,15 @@ Only these moves are allowed:
 | rra           | rotates stuck A down by one |
 | rrb           | rotates stuck B down by one |
 | rrr           | rotates both A and B down by one |
-##
+## visualizer
 ![Image alt](https://github.com/osmosx/push_swap/blob/main/img/push_swap.gif)
-
-## Usage
+## usage
 Run ```make```.
 
 The **push_swap** program is used in the same way
 ```c
   ./push_swap 5 2 3 1 4
 ```
-
 You can run the two together using:
 ```c
   ARG=`ruby -e "puts (0..100).to_a.shuffle.join(' ')"`; ./push_swap $ARG | ./checker -v $ARG
